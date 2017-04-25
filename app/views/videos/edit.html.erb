@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <h1>Editing Video</h1>
+
+            <br>
+            <%= link_to (fa_icon('eye') + ' Show'), @video, class: 'btn btn-lg btn-primary' %> |
+            <%= link_to (fa_icon('backward') + ' Back'), videos_path, class: 'btn btn-lg btn-primary' %>
+            <br><br>
+
+            <%= render 'form' %>
+
+        </div>
+    </div>
+</div>

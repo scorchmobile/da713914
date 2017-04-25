@@ -1,0 +1,481 @@
+// Partials
+@import './shared/globals';
+@import './shared/custom_nav_collapse';
+@import './shared/nav';
+@import './shared/footer';
+@import './shared/signin';
+@import './shared/colors';
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+p, h2, h3, h4, h5, h6 {
+	font-family: 'Lato', sans-serif;
+}
+
+.fittobox {                /* give fit to box an aspect ratio */
+    display: inline-block; /* let it be styled thusly */
+    padding: 0;            /* get rid of pre-styling */
+    margin: 0;
+    width: 100%;           /* take up full width available */
+    padding-top: 56.25%;   /* give aspect ratio of 16:9; "720 / 1280 = 0.5625" */
+    height: 100%;           /* don't want it to expand beyond padding */
+    position: relative;    /* allow for absolute positioning of child elements */
+}
+.fittobox > iframe {
+    position: absolute;    /* expand to fill */
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+// Index - Splash
+#hero {
+	padding: 0;
+	margin-top: -3px;
+}
+
+// Checked Li
+ul.checkList {
+	list-style: none;
+	& li {
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+	& li:before {
+		font-family: 'FontAwesome';
+		content: "\f046";
+		float: left;
+		width: 1.4em;
+		color: green;
+	}
+}
+
+// Same Height Columns
+.row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display:         flex;
+	flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+	display: flex;
+	flex-direction: column;
+}
+
+// Start
+#main-hero {
+	position: relative;
+	height: 800px;
+	min-width: 440px;
+
+	// Video BG
+	video#bgvid {
+	    position: fixed;
+	    top: 50%;
+	    left: 50%;
+	    min-width: 100%;
+	    min-height: 100%;
+	    width: auto;
+	    height: auto;
+	    z-index: -100;
+	    -ms-transform: translateX(-50%) translateY(-50%);
+	    -moz-transform: translateX(-50%) translateY(-50%);
+	    -webkit-transform: translateX(-50%) translateY(-50%);
+	    transform: translateX(-50%) translateY(-50%);
+	    background: image-url('video/deputize-america-video-poster.jpg') no-repeat;
+	    background-size: cover;
+	}
+}
+.main-hero-title {
+	background-color: rgba(0, 0, 0, 0.2);
+	min-height: 150px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+
+	@media (min-width: 1400px) {
+		line-height: 2.7em;
+		font-size: 6em;
+	}
+	@media (min-width: 822px) {
+		line-height: 2.1em;
+		font-size: 5em;
+	}
+	@media (max-width: 811px) {
+		line-height: 1.7em;
+		font-size: 3em;
+	}
+}
+.font-100 {
+	// NOTICE THIS IS INVERSELY RELATED
+	font-weight: 900;
+}
+
+// Button Styling
+.white-shadow {
+	color: white;
+	text-shadow: 0px 2px 3px #393434;
+
+	&.demo {
+		margin-bottom: 3px;
+		font-size: 1.5em;
+	}
+}
+.deputy-shadow {
+	color: #2d3192;
+	text-shadow: 0px 2px 3px #B9B3B3;
+}
+.family-shadow {
+	color: #ed202a;
+	text-shadow: 0px 2px 3px #B9B3B3;
+}
+.white-text {
+	color: white;
+	font-weight: 300;
+	font-size: 1.4em;
+}
+.main-hero-fact {
+	background-color: rgba(255,255,255,0.8);
+	margin-top: 207px;
+	min-width: 364px;
+
+	@media (min-width: 1400px) {
+		min-height: 321px;
+		p:first-child {
+			font-size: 8em;
+			text-align: center;
+		}
+		p:last-child {
+			font-size: 2em;
+			text-align: center;
+			margin-left: 6%;
+			width: 88%;
+		}
+	}
+	@media (max-width: 1399px) {
+		min-height: 237px;
+		p:first-child {
+			font-size: 6em;
+			text-align: center;
+		}
+		p:last-child {
+			font-size: 1.5em;
+			text-align: center;
+			margin-left: 6%;
+			width: 88%;
+		}
+	}
+
+
+}
+
+// Fixed Positioning
+div.call-to-action {
+    position: absolute;
+    width: 90%;
+	&.top-left {
+	    top: 63px;
+	    left: 18px;
+	}
+	&.bottom-right {
+	    bottom: 63px;
+	    right: 61px;
+	}
+	&.phone-bottom-right {
+	    bottom: 63px;
+	    right: 61px;
+	}
+	a {
+		transition: all 0.5s ease;
+		border: 2px solid white;
+		color: white;
+		font-size: 1.9em;
+		padding: 10px 35px;
+
+		&:hover {
+			background-color: white;
+			text-decoration: none;
+			&.deputy {
+				color: #2d3192;
+				border: 2px solid #2d3192;
+			}
+			&.family {
+				color: #ed1c24;
+				border: 2px solid #ed1c24;
+			}
+		}
+	}
+}
+div.video-bottom-bar {
+	position: absolute;
+}
+a.call-to-action {
+	transition: all 0.5s ease;
+	border: 2px solid white;
+	color: white;
+	font-size: 1.3em;
+	padding: 10px 35px;
+	margin-bottom: 18px;
+
+	&:hover {
+		background-color: white;
+		text-decoration: none;
+		&.deputy {
+			color: #2d3192;
+			border: 2px solid #2d3192;
+		}
+		&.family {
+			color: #ed1c24;
+			border: 2px solid #ed1c24;
+		}
+	}
+
+	i {
+		float: right;
+		margin-right: 12px;
+		line-height: 1.4em;
+	}
+}
+.video-call-to-action {
+	margin-top: 45px;
+	height: 45px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white !important;
+	font-size: 1.4em;
+	padding-left: 13px;
+	line-height: 2.1em;
+	transition: all 0.5s ease;
+	border: 2px solid #f7f7f7;
+
+	&:hover {
+		border: 2px solid #333;
+		color: #333 !important;
+		background-color: white;
+		text-decoration: none;
+	}
+
+	i {
+		float: right;
+		margin-right: 12px;
+		line-height: 1.9em;
+	}
+}
+
+.about-app {
+	position: relative;
+	background-size: cover;
+	min-height: 1393px;
+
+	@media (min-width: 1400px) {
+		background-image: image-url('cutting/phone_demo_background.jpg');
+
+		img {
+			margin: 0 auto;
+			position: absolute;
+			top: 176px;
+			left: 176px;
+		}
+	}
+	@media (max-width: 1399px) {
+		background-image: image-url('cutting/phone_demo_background.jpg');
+		img {
+			display: block;
+			margin: 176px auto 0;
+		}
+	}
+}
+.dynamic-margin-about-app {
+	@media (min-width: 1400px) {
+		margin-top: 65px;
+		margin-bottom: 54px;
+	}
+	@media (max-width: 1399px) {
+		margin-top: 36px;
+		margin-bottom: 33px;
+	}
+}
+.phone-demo {
+	position: relative;
+    background-color: white;
+	background-size: cover;
+	// &.one {
+	// 	min-height: 1334px;
+	// 	background-image: image-url('cutting/phone_demo_one.jpg');
+	// }
+	//
+	@media (min-width: 1400px) {
+		&.two, &.three {
+			background-size: 1500px;
+		}
+	}
+	@media (min-width: 822px) {
+		&.two, &.three {
+			background-size: 1500px;
+		}
+	}
+	@media (max-width: 811px) {
+		&.two, &.three {
+			background-size: 2045px;
+		}
+	}
+	&.two {
+		min-height: 864px;
+		background-image: image-url('cutting/phone_demo_two_clean.jpg');
+		background-repeat: repeat-x;
+
+		* img {
+			display: block;
+		    margin: 0 auto;
+		}
+
+		// BOTTOM CORNER EAR IF NEEDED
+		// &:after {
+		// 	bottom: -15px;
+		// 	right: 163px;
+		// 	border-color: #f3961c transparent; //#2d3192
+		// 	content: "";
+		// 	position: absolute;
+		// 	border-width: 27px 27px 0;
+		// 	border-style: solid;
+		// 	display: block;
+		// 	width: 0;
+		// 	z-index: 9;
+		// }
+	}
+	&.three {
+		min-height: 880px;
+		background-image: image-url('cutting/phone_demo_three_clean.jpg');
+		background-repeat: repeat-x;
+
+		* img {
+			display: block;
+		    margin: 0 auto;
+		}
+	}
+}
+.big-number {
+	text-align: right;
+	font-size:	3em;
+
+}
+.video-pane {
+	position: relative;
+	min-height: 761px;
+	background-size: cover;
+	&.app {
+		background-image: image-url('cutting/video_app.jpg');
+	}
+	&.michael {
+		background-image: image-url('cutting/video_michael.jpg');
+	}
+}
+.testimonial-pane {
+	position: relative;
+	//min-height: 838px;
+	//background-size: cover;
+	&.one {
+		//background-image: image-url('cutting/testimonial_deputy.jpg');
+	}
+	&.two {
+		//background-image: image-url('cutting/testimonial_personal.jpg');
+	}
+
+	div.testimonial-box {
+	    position: absolute;
+	    width: 523px;
+	    padding: 54px 62px;
+	    color: white;
+
+	    @media (min-width: 1400px) {
+			width: 523px;
+		    padding: 54px 62px;
+		}
+		@media (max-width: 1399px) {
+			width: 423px;
+		    padding: 44px 52px;
+		}
+		@media (max-width: 1000px) {
+			width: 323px;
+		    padding: 34px 42px;
+		}
+
+		p.author {
+		    margin-bottom: 21px;
+		    @media (min-width: 1400px) {
+				font-size: 2.4em;
+			}
+			@media (max-width: 1399px) {
+				font-size: 2.0em;
+			}
+			@media (max-width: 1000px) {
+				font-size: 1.6em;
+			}
+		}
+		p.content {
+		    font-style: italic;
+		    font-weight: 300;
+		    @media (min-width: 1400px) {
+				font-size: 2.0em;
+			}
+			@media (max-width: 1399px) {
+				font-size: 1.6em;
+			}
+			@media (max-width: 1000px) {
+				font-size: 1.2em;
+			}
+		}
+		&.deputy {
+		    background-color: #2d3192;
+		    left: 0px;
+		    @media (min-width: 1400px) {
+				bottom: 116px;
+			}
+			@media (max-width: 1399px) {
+				bottom: 116px;
+			}
+			@media (max-width: 1000px) {
+				bottom: 0px;
+			}
+
+		    &:after {
+	    	    content: "";
+				position: absolute;
+				top: 121px;
+				right: -29px;
+				border-width: 37px 31px 0px 0px;
+				border-style: solid;
+				border-color: #2d3192 transparent;
+				display: block;
+				width: 0;
+		    }
+		}
+		&.family {
+		    background-color: #ed202a;
+		    left: 0px;
+		    @media (min-width: 1400px) {
+				bottom: 180px;
+			}
+			@media (max-width: 1399px) {
+				bottom: 180px;
+			}
+			@media (max-width: 1000px) {
+				bottom: 0px;
+			}
+		    &:after {
+				border-color: #ed202a transparent;
+	    	    content: "";
+				position: absolute;
+				top: 82px;
+				right: -30px;
+				border-width: 37px 31px 0px 0px;
+				border-style: solid;
+				display: block;
+				width: 0;
+		    }
+		}
+	}
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="robots" content="index, follow" />
+<meta name="robots" content="noodp, noydir">
+<meta name="rating" content="general" />
+<meta name="author" content="Nathan Stool" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="&copy; Deputize America, LLC" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><%= !@title.blank? ? @title : "Admin Deputize America" %></title>
+<%= stylesheet_link_tag "manifests/main" %>
+<%= yield :head %>
+<%= csrf_meta_tags %>
+<%#= Gon::Base.render_data %>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-foggy" style='min-height: 0px;'>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#innerNav" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar" style="color: #2A2A2A;"></span>
+                <span class="icon-bar" style="color: #2A2A2A;"></span>
+                <span class="icon-bar" style="color: #2A2A2A;"></span>
+            </button>
+            <a href="/" class="navbar-brand pageNav">
+                <%= image_tag 'logo_with_text.png', class: 'img-responsive', id: 'logo', style: 'width: 108px;' %>
+            </a>
+        </div>
+        <div id="innerNav" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <% if admin_signed_in? %>
+                <li><%= link_to 'Manage Pages', pages_path %></li>
+                <li><%= link_to 'Manage Facts', facts_path %></li>
+                <li><%= link_to 'Manage Videos', videos_path %></li>
+                <li><%= link_to 'Manage Store', 'https://deputizeamerica-store.herokuapp.com/admin' %></li>
+                <li><%= link_to 'Manage Testimonials', testimonials_path %></li>
+                <li><%= link_to 'My Settings', edit_admin_registration_path %></li>
+                <li><%= link_to 'Log Out', destroy_admin_session_path, method: :delete %></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<%= render partial: 'layouts/shared/flash' %>
+<%= yield %>
+<%#= render partial: 'layouts/shared/footer' %>
+
+<div class="spacer-3"></div>
+<div class="spacer-3"></div>
+
+</body>
+
+<%= javascript_include_tag "manifests/main" %>
+<%= yield :dj %>
+</html>

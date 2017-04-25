@@ -1,0 +1,37 @@
+<%= simple_form_for(@fact) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+    <div class="row">
+      <div class="col col-sm-3">
+        <%= f.input :position %>
+      </div>
+      <div class="col col-sm-9"></div>
+    </div>
+
+    <div class="row">
+      <div class="col col-sm-12">
+        <%= f.input :headline, placeholder: '10 MIN' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-sm-6">
+        <%= f.input :line_one, placeholder: 'AVERAGE 911 RESPONSE' %>
+      </div>
+      <div class="col col-sm-6">
+        <%= f.input :line_two, placeholder: 'TIME IN ANY EMERGENCY ' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-2"></div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-lg btn-primary btn-block' %>
+  </div>
+
+<% end %>
+
+<div class="spacer-3"></div>

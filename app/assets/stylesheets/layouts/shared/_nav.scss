@@ -1,0 +1,112 @@
+// Center the Nav
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+    .navbar {
+		min-height: 173px;
+	}
+}
+
+@media (max-width: 1399px) {
+    #navbar {
+		margin-top: 27px;
+	}
+	.navbar {
+	    min-height: 122px !important;
+	}
+}
+@media (min-width: 1400px) {
+	#navbar {
+		margin-top: 15px;
+	}
+}
+
+.visible-1400 {
+	@media (max-width: 1399px) {
+    	display: none;
+	}
+	@media (min-width: 1400px) {
+		display: block;
+	}
+}
+// Also set in Custom Nav Width file
+.navbar {
+	background-color: #fff;
+	border-color: transparent;
+	padding-top: 33px;
+
+	&.footer-nav {
+		margin-bottom: 0px;
+		border-radius: 0px;
+	}
+}
+
+.navbar-header {
+	margin-top: 15px;
+}
+
+.navbar-brand h1 {
+	margin: 0;
+	color: white;
+}
+
+#nav-social {
+	padding-right: 30px;
+	li {
+		display: inline;
+		list-style-type: none;
+		padding-right: 3px;
+	}
+}
+
+#navbar {
+	margin-left: 30px;
+	ul {
+		padding-top: 33px;
+	}
+}
+
+.navbar-default .navbar-nav > li > a {
+	font-size: 1.2em;
+	transition: background-color 300ms ease-out;
+	border-radius: 4px;
+	color: black;
+	&:not(.sign-in) {
+		margin: 0px 0px;
+	}
+	&:hover {
+		color: #ed202a;
+		background-color: white;
+	}
+	&.active {
+		color: #ed202a;
+	}
+}
+
+.dropdown-menu > li > a {
+	font-size: 1.2em;
+}
+
+.sign-in {
+	background-color: rgb(36, 86, 173);
+	padding: 10px !important;
+	color: white !important;
+	margin-top: 4px;
+	&:hover {
+		background-color: white !important;
+		color: rgb(36, 86, 173) !important;
+	}
+}
+
+#logo {
+	position: absolute;
+	top: 0px;
+	padding-left: 0px;
+}

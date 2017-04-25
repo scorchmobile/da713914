@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Listing Testimonials</h1>
+
+      <br>
+      <%= link_to (fa_icon('plus') + ' Add testimonial'), new_testimonial_path, class: 'btn btn-lg btn-primary' %>
+      <br><br>
+
+      <table class="table table-striped table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Type</th>
+            <th>Author</th>
+            <th>Background Image</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @testimonials.each do |testimonial| %>
+            <tr>
+              <td><%= testimonial.position %></td>
+              <td><%= testimonial.testimonial_type %></td>
+              <td><%= testimonial.author %></td>
+              <td><%= image_tag testimonial.image_url(:thumb)  rescue nil %></td>
+              <td><%= link_to 'Show', testimonial %></td>
+              <td><%= link_to 'Edit', edit_testimonial_path(testimonial) %></td>
+              <td><%= link_to 'Destroy', testimonial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

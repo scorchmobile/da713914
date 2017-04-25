@@ -1,0 +1,155 @@
+// Imported Fonts
+
+// Colors
+$dk-blue: #0b233e;
+$md-blue: #2778d5;
+$lt-blue: #a6c8ef;
+$red: #eb0028;
+$charcoal: #0b233e;
+
+// Background Colors
+$bg-blue: rgba(51, 117, 232, 0.8);
+$bg-green: rgba(64, 164, 50, 0.8);
+
+// TEXT
+.charcoal-text {
+	color: $charcoal;
+}
+.dark-blue-text {
+	color: $dk-blue;
+}
+.medium-blue-text {
+	color: $md-blue;
+}
+.dark-red-text {
+	color: #aa0622;
+}
+.light-red-text {
+	color: #da082c;
+}
+.grey-text {
+	color: $charcoal;
+}
+.black-text {
+	color: black;
+}
+.black-text-shadow {
+	text-shadow: 1px 1px 0 #5A5A5A !important;
+}
+
+
+// Font Colors
+.underline {
+	text-decoration: underline;
+}
+
+// Bootstrap
+.btn {
+	transition: background-color 300ms ease-out;
+}
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+// Buttons
+.btn-red {
+	background-color: #da082c;
+	border-color: #b60322;
+	&:hover {
+		background-color: #aa0622;
+		border-color: #8d071e;
+	}
+}
+
+// Spacers
+@mixin spacer($size) {
+	height: $size;
+}
+.spacer-05 {
+	@include spacer(0.5em)
+}
+.spacer-1 {
+	@include spacer(1em)
+}
+.spacer-15 {
+	@include spacer(1.5em)
+}
+.spacer-2 {
+	@include spacer(2em)
+}
+.spacer-25 {
+	@include spacer(2.5em)
+}
+.spacer-3 {
+	@include spacer(3em)
+}
+.spacer-35 {
+	@include spacer(3.5em)
+}
+
+// Random
+table {
+	width: 100%;
+}
+
+// Text Alignment
+.centered {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+.justify {
+	text-align: justify;
+}
+.left {
+	text-align: left;
+}
+.full-width {
+	width: 100%;
+}
+
+// Image Alignment
+.borderedImg {
+	padding: 3px 3px;
+	border: 1px solid lighten(#aeaeae, 10%);
+}
+
+.centeredImg {
+	display: block !important;
+	margin: 0 auto;
+}
+
+// Floating
+.floatRight {
+	float: right;
+}
+
+.floatLeft {
+	float: left;
+}
+
+// Table
+.fa-red {
+	color: $red;
+}
+.fa-blue {
+	color: $md-blue;
+}
+.fa-black {
+	color: #000000;
+}
+.fa-white {
+	color: #ffffff;
+}
+
+

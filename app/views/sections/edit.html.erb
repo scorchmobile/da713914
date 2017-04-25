@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <h1>Editing Section</h1>
+
+            <br>
+            <%= link_to (fa_icon('eye') + ' Show'), page_section_path(@page, @section), class: 'btn btn-lg btn-primary' %> |
+            <%= link_to (fa_icon('backward') + ' Back'), page_sections_path(@page), class: 'btn btn-lg btn-primary' %>
+            <br><br>
+
+            <%= render 'form' %>
+
+        </div>
+    </div>
+</div>

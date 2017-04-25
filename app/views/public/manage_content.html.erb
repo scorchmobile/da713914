@@ -1,0 +1,17 @@
+<div class="spacer-3"></div>
+<div class="spacer-3"></div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<%= simple_form_for @data, url: update_content_path, method: :put do |f| %>
+				<%= f.input :content, input_html: { class: 'redactor', style: 'min-height: 500px;' } %>
+				
+				<%= f.button :submit, 'UPDATE SPLASH PAGE CONTENT', class: 'btn btn-primary btn-lg', style: 'width: 100%; background-color: #eb0028;' %>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="spacer-3"></div>
+<div class="spacer-3"></div>

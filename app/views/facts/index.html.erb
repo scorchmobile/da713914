@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p id="notice"><%= notice %></p>
+
+      <h1>Listing Facts</h1>
+
+      <br>
+      <%= link_to (fa_icon('plus') + ' Add fact'), new_fact_path, class: 'btn btn-lg btn-primary' %>
+      <br><br>
+
+      <table class="table table-striped table-condensed table-hover">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Name</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @facts.each do |fact| %>
+            <tr>
+              <td><%= fact.position %></td>
+              <td><%= fact.headline %></td>
+              <td><%= link_to 'Show', fact %></td>
+              <td><%= link_to 'Edit', edit_fact_path(fact) %></td>
+              <td><%= link_to 'Destroy', fact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

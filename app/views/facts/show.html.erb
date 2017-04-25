@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <br>
+            <%= link_to (fa_icon('backward') + ' Back'), facts_path, class: 'btn btn-lg btn-primary' %>
+            <br><br>
+
+            <p id="notice"><%= notice %></p>
+
+            <%= simple_form_for(@fact) do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+
+                <div class="row">
+                  <div class="col col-sm-3">
+                    <%= f.input :position %>
+                  </div>
+                  <div class="col col-sm-9"></div>
+                </div>
+
+                <div class="row">
+                  <div class="col col-sm-12">
+                    <%= f.input :headline, placeholder: '10 MIN' %>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col col-sm-6">
+                    <%= f.input :line_one, placeholder: 'AVERAGE 911 RESPONSE' %>
+                  </div>
+                  <div class="col col-sm-6">
+                    <%= f.input :line_two, placeholder: 'TIME IN ANY EMERGENCY ' %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="spacer-2"></div>
+
+            <% end %>
+
+            <%= link_to (fa_icon('pencil') + ' Edit'), edit_fact_path(@fact), class: 'btn btn-lg btn-primary' %>
+
+            <div class="spacer-3"></div>
+            <div class="spacer-3"></div>
+
+            <% content_for :dj do %>
+                <script type="text/javascript">
+                    $('input, select, textarea').prop('disabled', true);
+                </script>
+            <% end %>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<%= simple_fields_for :payment, url: '#' do |f| %>
+
+	<%= f.input :user_type_id, collection: [['Citizen', '4'], ['Deputy', '3'], ['Family Plan 3', '6'], ['Family Plan 6', '5']], prompt: 'Select Membership' %>
+
+	<br>
+	<%= f.input :cc_number, as: :string, placeholder: 'Credit Card Number', label: 'Card Number' %>
+	<%= f.input :cc_year, collection: 2016..2030, prompt: 'Select Year', label: 'Year' %>
+	<%= f.input :cc_month, collection: 1..12, prompt: 'Select Month', label: 'Month' %>
+	<%= f.input :cc_cvv, as: :string, placeholder: 'CVV Code', label: 'CVV' %>
+
+	<br>
+	<%= f.input :billing_street1, as: :string, placeholder: '123 Main', label: 'Billing Street 1' %>
+	<%= f.input :billing_street2, as: :string, placeholder: 'Suite 1000', label: 'Billing Street 2' %>
+	<%= f.input :billing_city, as: :string, placeholder: 'Dallas', label: 'Billing City' %>
+	<%= f.input :billing_state, as: :string, placeholder: 'TX', label: 'Billing State' %>
+	<%= f.input :billing_zipcode, as: :string, placeholder: '75544', label: 'Billing Zip' %>
+
+	<br>
+	<%= f.input :shipping_street1, as: :string, placeholder: '123 Main', label: 'Shipping Street 1' %>
+	<%= f.input :shipping_street2, as: :string, placeholder: 'Suite 1000', label: 'Shipping Street 2' %>
+	<%= f.input :shipping_city, as: :string, placeholder: 'Dallas', label: 'Shipping City' %>
+	<%= f.input :shipping_state, as: :string, placeholder: 'TX', label: 'Shipping State' %>
+	<%= f.input :shipping_zipcode, as: :string, placeholder: '75544', label: 'Shipping Zip' %>
+
+	<%= f.input :user_id, as: :hidden, input_html: { value: @user_id } %>
+
+	<br>
+	<%= f.submit :submit %>
+
+<% end %>

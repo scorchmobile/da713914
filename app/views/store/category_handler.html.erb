@@ -1,0 +1,50 @@
+<!-- Secure SECTION -->
+<div class="secure-section">
+    <div class="row">
+        <div class="small-12 medium-12 large-12 columns">SECURE TRANSACTIONS. FAST DELIVERY.</div>
+    </div>
+</div>
+
+
+<!-- Secure SECTION -->
+<div class="content-pages-title">
+    <div class="row">
+        <div class="small-11 small-centered medium-12 large-12 columns">
+            <h2><%= @category.name rescue nil %></h2>
+            <h4><%= @category.description rescue nil %></h4>
+        </div>
+    </div>
+</div>
+
+<!-- CUTTING EDGE SECTION -->
+<div class="cutting-section">
+    <div class="row">
+        <div class="small-11 small-centered medium-12 large-12 columns breadcrumb">
+            <div class="page-number">Showing <%= @products.count %> results</div>
+            <button href="#" data-dropdown="sortBy" aria-controls="drop1" aria-expanded="false" class="button dropdown tiny sortByPrice" style="float: right;">
+                <% if !params[:price].present? %>
+                    SORT BY PRICE:
+                <% elsif params[:price] == 'highest' %>
+                    HIGH-TO-LOW
+                <% elsif params[:price] == 'lowest' %>
+                    LOW-TO-HIGH
+                <% end %>
+            </button><br>
+            <ul id="sortBy" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+                <li class="<%= active_dropdown('highest', params[:price]) %>"><div><%= link_to 'Price: High-to-Low', price: 'highest', style: (params[:style] rescue nil) %></div></li>
+                <li class="<%= active_dropdown('lowest', params[:price]) %>"><div><%= link_to 'Price: Low-to-High', price: 'lowest', style: (params[:style] rescue nil) %></div></li>
+            </ul>
+            <hr/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-11 small-centered medium-12 large-12 columns">
+            <ul class="products centered">
+                <%= render partial: 'store/products', collection: @products, as: :product %>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<%= render partial: 'public/other_products', locals: { text: 'Customers Also Viewed' }, collection: @other_products, as: :product %>

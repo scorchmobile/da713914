@@ -1,0 +1,51 @@
+<%= simple_form_for([:category, @product]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col col-sm-4">
+        <%= f.association :category, include_blank: false %>
+      </div>
+      <div class="col col-sm-4">
+        <%= f.input :position, placeholder: '0' %>
+      </div>
+      <div class="col col-sm-4">
+        <%= f.input :visible %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-sm-6">
+        <%= f.input :name, placeholder: 'Baseball Hat' %>
+      </div>
+      <div class="col col-sm-6">
+        <%= f.input :permalink, placeholder: 'white-baseball-cap' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-sm-6">
+        <%= f.input :price, placeholder: '10.00' %>
+      </div>
+
+      <div class="col col-sm-6">
+        <%= f.input :image %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-sm-12">
+        <%= f.input :description, input_html: { class: 'redactor', style: 'min-height: 500px;' } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-2"></div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-lg btn-primary btn-block' %>
+  </div>
+
+<% end %>
+
+<div class="spacer-3"></div>

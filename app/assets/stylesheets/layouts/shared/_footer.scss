@@ -1,0 +1,36 @@
+//FOOTER
+.footer {
+	text-align: center;
+	background-color: #0b233e;
+	#footerSignUp {
+		border: 1px solid #235937;
+		position: absolute;
+		margin: -85px 0 0 -186px;
+		text-transform: uppercase;
+	}
+	nav.footer-main {
+		span {
+			margin: 0 10px;
+		}
+		a {
+			color: #000;
+			&:hover {
+				text-decoration: none;
+				color: #2456ad;
+				text-shadow: 0px 0px 1px #0600ed;
+				transition: background-color 300ms ease-out;
+			}
+		}
+	}
+	nav.footer-secondary {
+		a {
+			font-size: 10px;
+			color: #999;
+			margin: 0 15px;
+		}
+	}
+	p.copyright {
+		margin: 15px 0 9px;
+		font-size: 10px;
+	}
+}

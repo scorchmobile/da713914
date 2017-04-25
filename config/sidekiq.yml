@@ -1,0 +1,20 @@
+# # Sidekiq Configure
+# 
+# :verbose: true
+# 
+# :timeout: 30
+# 
+# :queues:
+#   - first
+#   - second
+#   - third
+# 
+# development:
+#   #:pidfile: 'tmp/pids/sidekiq.pid'
+#   #:logfile: 'log/sidekiq.log'
+#   :concurrency: 10
+#   
+# production:
+#   :pidfile: tmp/pids/sidekiq.production.pid
+#   :logfile: log/sidekiq.production.log
+#   :concurrency: 20

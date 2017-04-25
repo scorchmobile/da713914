@@ -1,0 +1,39 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require tether
+//= require bootstrap-sprockets
+//= require bootstrap-switch
+//= require tinymce
+
+tinymce.init({
+	selector: '.redactor',
+	content_css : "<%= asset_path 'manifests/main.css' %>",
+	fontsize_formats: '0.8em 0.9em 1.0em 1.1em 1.2em 1.3em 1.4em 1.5em 2.0em 2.5em 3em 3.5em 4em 4.5em 5em',
+	theme: 'modern',
+	plugins: [
+	    "autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
+	    "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+	    "table contextmenu directionality emoticons template textcolor paste textcolor colorpicker textpattern"
+	  ],
+	mode : "textareas",
+    force_br_newlines : false,
+    force_p_newlines : false,
+    forced_root_block : '',
+	toolbar1: "code | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
+	toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
+	toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | visualchars visualblocks nonbreaking template pagebreak restoredraft",
+	menubar: false,
+	toolbar_items_size: 'small'
+});
